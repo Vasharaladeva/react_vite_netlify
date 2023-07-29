@@ -1,0 +1,6 @@
+[[redirects]]
+from = "clientes/nuevo"
+to = "/estudiante/:id"
+status = 200
+force = true
+
