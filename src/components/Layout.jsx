@@ -13,8 +13,8 @@ function Layout() {
                         to="/">Lista</Link>
 
                     <Link
-                        className={`${location.pathname === '/scannerQr' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
-                        to="/scannerQr">Escanear Estudiante</Link>
+                        className={`${location.pathname === '/clientes/nuevo' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
+                        to="/clientes/nuevo">Escanear Estudiante</Link>
                     <Link
                         className={`${location.pathname === '/formulario' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
                         to="/formulario">Formulario</Link>

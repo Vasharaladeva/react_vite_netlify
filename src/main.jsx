@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
-import QrScanner, {action as nuevoClienteAction } from './pages/QrScanner'
+import NuevoCliente, {action as nuevoClienteAction } from './pages/NuevoCliente'
 import Index, { loader as clientesLoader } from './pages/Index'
 import EditarCliente, { loader as editarClienteLoader, action as editarClienteAction } from './pages/EditarCliente'
 import ErrorPage from './components/ErrorPage'
@@ -25,8 +25,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />
       },
       {
-        path: '/scannerQr',
-        element: <QrScanner />,
+        path: '/clientes/nuevo',
+        element: <NuevoCliente />,
         action: nuevoClienteAction,
         errorElement: <ErrorPage />
       },

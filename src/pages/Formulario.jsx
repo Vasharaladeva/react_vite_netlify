@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import React, { useState, useEffect } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
+import { redirect,Outlet } from 'react-router-dom';
 
 const AddParejaForm = () => {
   const [value, setValue] = useState({
@@ -92,6 +93,7 @@ const AddParejaForm = () => {
 
       // Limpiar los campos del formulario y las URLs de las imágenes después de agregar exitosamente
       setValue({
+        nombre: '',
         apellido: '',
         email: '',
         carnet: '',
@@ -99,7 +101,6 @@ const AddParejaForm = () => {
         colegio: '',
         promocion: '',
         destino: '',
-        nombre: '',
       });
       setImageUrls({
         imagenDocumento: null,
@@ -113,6 +114,7 @@ const AddParejaForm = () => {
         imagenPermiso: null,
         imagenPerfil:null
       });
+      redirect('/');
     } catch (error) {
       console.log(error);
       toast.error('Hubo un error al agregar el estudiante');
@@ -416,12 +418,14 @@ const AddParejaForm = () => {
         </div>
 
         <div className="mt-6 flex items-center justify-end gap-x-6">
+          <p>Espera hasta que nuestro servidor analice sus datos no forzar </p>
           <button
             type="submit"
             className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Enviar
           </button>
+          <Outlet />
         </div>
       </form>
     </>
